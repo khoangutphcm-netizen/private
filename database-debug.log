@@ -1,0 +1,21 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by akka.util.Unsafe (file:/C:/Users/KHOA/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar)
+WARNING: Please consider reporting this to the maintainers of class akka.util.Unsafe
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+18:08:45.625 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+18:08:45.727 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+18:08:46.226 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - demo-foodnow-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 106ms, init: 0ms
+18:08:46.330 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace demo-foodnow-default-rtdb status Active to Active
+18:08:50.267 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace demo-foodnow, but the emulator is configured for demo-foodnow-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+18:08:50.279 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - demo-foodnow successfully activated FBKV (SurveyIdle(0)) wait: 5ms, init: 0ms
+18:08:50.331 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace demo-foodnow status Active to Active
+18:08:51.727 [FirebaseWorkerPool-1-2] WARN com.firebase.server.forge.App$ - Received service account token eyJh...ifQ., assuming ownership.
+18:08:52.171 [FirebaseWorkerPool-1-3] WARN com.firebase.server.forge.App$ - Received service account token eyJh...ifQ., assuming ownership.
+18:08:52.296 [FirebaseWorkerPool-1-4] WARN com.firebase.server.forge.App$ - Received service account token eyJh...ifQ., assuming ownership.
+18:08:52.368 [FirebaseWorkerPool-1-1] WARN com.firebase.server.forge.App$ - Received service account token eyJh...ifQ., assuming ownership.
+18:08:52.773 [FirebaseWorkerPool-1-2] WARN com.firebase.server.forge.App$ - Received service account token eyJh...ifQ., assuming ownership.
+18:08:52.974 [FirebaseWorkerPool-1-3] WARN com.firebase.server.forge.App$ - Received service account token eyJh...ifQ., assuming ownership.
+18:08:52.974 [FirebaseWorkerPool-1-4] WARN com.firebase.server.forge.App$ - Received service account token eyJh...ifQ., assuming ownership.

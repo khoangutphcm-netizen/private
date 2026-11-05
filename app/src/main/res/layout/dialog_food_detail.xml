@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/ivDetailFoodImage"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_seveneleven"
+        android:contentDescription="Food Image" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/tvDetailFoodName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Uranium Pizza"
+            android:textColor="#212121"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDetailFoodStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="● Còn hàng"
+            android:textColor="#00B14F"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="#E8F5E9" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDetailFoodPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="120,000 VND"
+        android:textColor="#00B14F"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="6dp" />
+
+    <TextView
+        android:id="@+id/tvDetailFoodDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mô tả món ăn thơm ngon chuẩn vị hải sản tươi sống..."
+        android:textColor="#616161"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp" />
+
+    <!-- Options / Toppings Container -->
+    <TextView
+        android:id="@+id/tvToppingsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tùy chọn thêm (Toppings):"
+        android:textColor="#212121"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layoutOptionsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="6dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Số lượng chọn:"
+            android:textColor="#424242"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#424242"
+            android:backgroundTint="#EEEEEE"
+            android:padding="0dp" />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#424242"
+            android:backgroundTint="#EEEEEE"
+            android:padding="0dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Thêm Vào Giỏ Hàng"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#00B14F"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

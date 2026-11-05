@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:fillViewport="true">
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Xác nhận đơn hàng" android:textSize="24sp" android:textStyle="bold" android:textColor="#183C29" />
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kiểm tra món và chọn cách thanh toán" android:layout_marginTop="6dp" />
+  <TextView android:id="@+id/checkoutItems" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:textSize="16sp" android:lineSpacingExtra="6dp" />
+  <TextView android:id="@+id/checkoutTotal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:textSize="20sp" android:textStyle="bold" android:textColor="#00883D" />
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phương thức thanh toán" android:textSize="17sp" android:textStyle="bold" android:layout_marginTop="24dp" />
+  <RadioGroup android:id="@+id/checkoutMethods" android:layout_width="match_parent" android:layout_height="wrap_content" android:checkedButton="@id/payWallet">
+   <RadioButton android:id="@+id/payWallet" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:text="Ví điện tử" />
+   <RadioButton android:id="@+id/payBank" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:text="Chuyển khoản ngân hàng" />
+   <RadioButton android:id="@+id/payCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="52dp" android:text="Thẻ thanh toán" />
+  </RadioGroup>
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bản thử nghiệm: không thu tiền và không yêu cầu thông tin ngân hàng. Đơn xác nhận thành công được lưu lên hệ thống." android:textSize="13sp" android:layout_marginTop="12dp" />
+  <Button android:id="@+id/checkoutConfirm" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="16dp" android:text="Tiếp tục thanh toán" android:textAllCaps="false" android:backgroundTint="#00A94F" android:textColor="#FFFFFF" />
+  <Button android:id="@+id/checkoutBack" android:layout_width="match_parent" android:layout_height="48dp" android:text="Quay lại chọn món" android:textAllCaps="false" style="?android:attr/borderlessButtonStyle" />
+ </LinearLayout>
+</ScrollView>

@@ -1,0 +1,62 @@
+const fs = require('node:fs');
+const assert = require('node:assert/strict');
+const {initializeTestEnvironment, assertSucceeds, assertFails} = require('@firebase/rules-unit-testing');
+const {ref, set, get, update, remove, query, orderByChild, orderByKey, equalTo, runTransaction} = require('firebase/database');
+
+(async () => {
+ const env = await initializeTestEnvironment({projectId:'demo-foodnow', database:{host:'127.0.0.1',port:9000,rules:fs.readFileSync('database.rules.json','utf8')}});
+ try {
+  await env.clearDatabase();
+  const profiles={admin:{email:'admin@test.local',fullName:'Admin',role:'admin'},u1:{email:'u1@test.local',fullName:'User 1',role:'user'},u2:{email:'u2@test.local',fullName:'User 2',role:'user'},s1:{email:'s1@test.local',fullName:'Shipper 1',role:'shipper'},s2:{email:'s2@test.local',fullName:'Shipper 2',role:'shipper'}};
+  await env.withSecurityRulesDisabled(ctx=>set(ref(ctx.database(),'users'),profiles));
+  const db=id=>env.authenticatedContext(id,{email:id+'@test.local'}).database();
+  const admin=db('admin'),u1=db('u1'),u2=db('u2'),s1=db('s1'),s2=db('s2');
+  await assertSucceeds(get(query(ref(u1,'users'),orderByKey(),equalTo('u1'))));
+  await assertFails(get(ref(u1,'users')));
+  await assertFails(update(ref(u1,'users/u1'),{role:'admin'}));
+  await assertFails(update(ref(admin,'users/admin'),{disabled:true}));
+  await assertSucceeds(set(ref(db('new'),'users/new'),{email:'new@test.local',fullName:'New',role:'user',avatar:'ic_user'}));
+  await assertFails(set(ref(db('evil'),'users/evil'),{email:'evil@test.local',fullName:'Evil',role:'admin'}));
+  const demo=JSON.parse(fs.readFileSync('app/src/main/assets/demo-catalog.json','utf8'));
+  const seed={}; for(const [collection,rows] of Object.entries(demo)) for(const [key,value] of Object.entries(rows)) seed[collection+'/'+key]=value;
+  await assertSucceeds(update(ref(admin),seed));
+  await assertSucceeds(get(ref(u1,'foods')));
+  await assertFails(update(ref(u1,'foods/demo-f1'),{price:1}));
+  await assertFails(update(ref(admin,'foods/demo-f1'),{price:-1}));
+  const order={ownerUid:'u1',userEmail:'u1@test.local',totalPrice:120000,date:'2026-10-29 20:00',status:'Chờ xác nhận',shipperUid:'',shipperName:'',itemsJson:JSON.stringify([{foodKey:'demo-f1',foodName:'Pizza',price:120000,quantity:1}]),paymentStatus:'simulated_paid',deliveryProgress:0};
+  await assertSucceeds(set(ref(u1,'orders/o1'),order));
+  await assertSucceeds(get(query(ref(u1,'orders'),orderByChild('ownerUid'),equalTo('u1'))));
+  await assertFails(get(ref(u2,'orders/o1')));
+  await assertFails(set(ref(u2,'orders/stolen'),order));
+  await assertFails(update(ref(u1,'orders/o1'),{status:'Đã hoàn thành'}));
+  const claim=(database,uid)=>runTransaction(ref(database,'orders/o1'),value=>{
+   if(value===null)return value;
+   if(value.status!=='Chờ xác nhận'||value.shipperUid!=='')return;
+   return {...value,shipperUid:uid,shipperName:uid,status:'Đang giao'};
+  },{applyLocally:false});
+  const results=await Promise.allSettled([claim(s1,'s1'),claim(s2,'s2')]);
+  assert.equal(results.filter(x=>x.status==='fulfilled'&&x.value.committed).length,1);
+  const accepted=(await get(ref(admin,'orders/o1'))).val();
+  const winner=accepted.shipperUid==='s1'?s1:s2, loser=accepted.shipperUid==='s1'?s2:s1;
+  await assertFails(update(ref(loser,'orders/o1'),{status:'Đã hoàn thành'}));
+  await assertSucceeds(update(ref(winner,'orders/o1'),{deliveryProgress:50,simulateStatusText:'Đang giao'}));
+  await assertFails(update(ref(winner,'orders/o1'),{totalPrice:1}));
+  await assertFails(update(ref(winner,'orders/o1'),{itemsJson:'[]'}));
+  await assertFails(update(ref(winner,'orders/o1'),{'items/1':{foodKey:'demo-f1',foodName:'Free',price:0,quantity:1}}));
+  await assertSucceeds(update(ref(winner,'orders/o1'),{status:'Đã hoàn thành'}));
+  await assertFails(update(ref(u1,'orders/o1'),{status:'Đã hủy'}));
+  await assertFails(remove(ref(u1,'orders/o1')));
+  await assertSucceeds(set(ref(u1,'orders/o2'),order));
+  await assertSucceeds(update(ref(u1,'orders/o2'),{status:'Đã hủy'}));
+  await assertFails(update(ref(s1,'orders/o2'),{shipperUid:'s1',shipperName:'s1',status:'Đang giao'}));
+  await assertSucceeds(update(ref(admin,'users/u2'),{role:'shipper'}));
+  await assertSucceeds(update(ref(admin,'users/u2'),{disabled:true}));
+  await assertFails(get(ref(u2,'foods')));
+  await assertFails(set(ref(u2,'orders/disabled'),{...order,ownerUid:'u2',userEmail:'u2@test.local'}));
+  await assertSucceeds(update(ref(admin,'users/u2'),{disabled:false}));
+  await assertSucceeds(get(ref(u2,'foods')));
+  await assertSucceeds(remove(ref(admin,'orders/o2')));
+  await assertFails(get(ref(env.unauthenticatedContext().database(),'foods')));
+  console.log('PASS: authentication profiles, catalog, isolation, concurrent claiming, delivery, cancellation, admin roles and disabled accounts');
+ } finally { await env.cleanup(); }
+})().catch(error=>{console.error(error);process.exitCode=1;});

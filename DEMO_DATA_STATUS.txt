@@ -1,0 +1,23 @@
+Cập nhật 05/11/2026
+
+Đã đăng nhập admin và ghi/đọc lại Firebase thật thành công.
+Project: foodnow-app-22dff
+4 nhà hàng, 16 món, 9 topping, 6 đơn mẫu.
+Giữ nhà hàng KFC có sẵn, sửa logo; bổ sung 3 nhà hàng còn lại.
+Các hồ sơ admin@gmail.com, user@gmail.com, shipper@gmail.com đã tồn tại.
+Không thay mật khẩu hoặc tạo lại các tài khoản.
+
+Đơn mẫu thuộc user@gmail.com; đơn đã nhận thuộc shipper@gmail.com.
+2 đơn chờ nhận, 1 đang giao (40%), 2 hoàn tất, 1 đã hủy.
+Chi tiết món của đơn có nhãn [ĐƠN MẪU].
+Giá, món và địa chỉ là dữ liệu minh họa, không phải thực đơn chính thức.
+
+Cài APK mới để nhận tài nguyên logo KFC và Circle K chính thức.
+Màn hình thêm nhà hàng tự chọn logo theo tên KFC/Circle K/Highlands/7-Eleven.
+Tên khác dùng biểu tượng món ăn chung; chưa có tính năng upload logo tùy ý.
+Món mới dùng biểu tượng món ăn chung.
+Thanh toán vẫn là mô phỏng. Tổng tiền chưa được xác thực bằng máy chủ.
+
+Script seed-live-demo.cjs lấy mật khẩu từ FOODNOW_ADMIN_PASSWORD,
+không ghi mật khẩu hay token vào tệp. Chạy lại bỏ qua các đơn/món mẫu đã có.
+Bản sao trước cập nhật nằm trong firebase-backups; không cần gửi thư mục này cho thầy.

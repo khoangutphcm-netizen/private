@@ -1,0 +1,151 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      ".read": "(auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin') || (auth != null && query.orderByKey && query.equalTo === auth.uid)",
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "(auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin') || (auth != null && auth.uid === $uid && newData.exists() && ((!data.exists() && newData.child('role').val() === 'user' && newData.child('disabled').val() !== true) || (data.exists() && data.child('disabled').val() !== true && newData.child('role').val() === data.child('role').val() && newData.child('disabled').val() === data.child('disabled').val())))",
+        ".validate": "newData.hasChildren(['email','fullName','role']) && (!data.exists() || auth.uid !== $uid || (newData.child('role').val() === data.child('role').val() && newData.child('disabled').val() === data.child('disabled').val()))",
+        "email": {
+          ".validate": "newData.isString() && ((auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin') || newData.val() === auth.token.email)"
+        },
+        "fullName": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "role": {
+          ".validate": "newData.val() === 'admin' || newData.val() === 'user' || newData.val() === 'shipper'"
+        },
+        "avatar": {
+          ".validate": "newData.isString() || newData.isNumber()"
+        },
+        "disabled": {
+          ".validate": "newData.isBoolean()"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "restaurants": {
+      ".read": "auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true",
+      "$id": {
+        ".write": "(auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin')",
+        ".validate": "newData.hasChildren(['name','address','openHours','logo','cover'])",
+        "name": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "address": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "openHours": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "logo": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "cover": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "foods": {
+      ".read": "auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true",
+      "$id": {
+        ".write": "(auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin')",
+        ".validate": "newData.hasChildren(['name','restaurantKey','price','description','available','image'])",
+        "name": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "restaurantKey": {
+          ".validate": "newData.isString()"
+        },
+        "price": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 100000000"
+        },
+        "description": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "available": {
+          ".validate": "newData.isBoolean()"
+        },
+        "image": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "options": {
+      ".read": "auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true",
+      "$id": {
+        ".write": "(auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin')",
+        ".validate": "newData.hasChildren(['foodKey','optionName','extraPrice'])",
+        "foodKey": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "optionName": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "extraPrice": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 100000000"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "orders": {
+      ".indexOn": [
+        "ownerUid"
+      ],
+      ".read": "(auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin') || (auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'shipper') || (auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && query.orderByChild === 'ownerUid' && query.equalTo === auth.uid)",
+      "$order": {
+        ".read": "auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && (data.child('ownerUid').val() === auth.uid || (auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin') || (auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'shipper'))",
+        ".write": "(auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'admin') || (auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && newData.exists() && ((!data.exists() && newData.child('ownerUid').val() === auth.uid && newData.child('userEmail').val() === auth.token.email && newData.child('status').val() === 'Chờ xác nhận' && newData.child('shipperUid').val() === '') || (data.exists() && (((data.child('ownerUid').val() === auth.uid) && ((data.child('status').val() === 'Chờ xác nhận' && newData.child('status').val() === 'Đã hủy') || (data.child('status').val() === 'Đang giao' && newData.child('status').val() === 'Đã hoàn thành')) && newData.child('shipperUid').val() === data.child('shipperUid').val()) || ((auth != null && root.child('users').child(auth.uid).exists() && root.child('users').child(auth.uid).child('disabled').val() !== true && root.child('users').child(auth.uid).child('role').val() === 'shipper') && ((data.child('status').val() === 'Chờ xác nhận' && data.child('shipperUid').val() === '' && newData.child('status').val() === 'Đang giao' && newData.child('shipperUid').val() === auth.uid) || (data.child('status').val() === 'Đang giao' && data.child('shipperUid').val() === auth.uid && newData.child('shipperUid').val() === auth.uid && (newData.child('status').val() === 'Đang giao' || newData.child('status').val() === 'Đã hoàn thành'))))))))",
+        ".validate": "newData.hasChildren(['ownerUid','userEmail','totalPrice','date','status','shipperUid','shipperName','itemsJson','paymentStatus'])",
+        "status": {
+          ".validate": "newData.val() === 'Chờ xác nhận' || newData.val() === 'Đang giao' || newData.val() === 'Đã hoàn thành' || newData.val() === 'Đã hủy'"
+        },
+        "shipperUid": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "shipperName": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "deliveryProgress": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 100"
+        },
+        "simulateStatusText": {
+          ".validate": "newData.isString() && newData.val().length <= 500"
+        },
+        "$other": {
+          ".validate": false
+        },
+        "ownerUid": {
+          ".validate": "newData.isString() && (!data.exists() || newData.val() === data.val())"
+        },
+        "userEmail": {
+          ".validate": "newData.isString() && (!data.exists() || newData.val() === data.val())"
+        },
+        "date": {
+          ".validate": "newData.isString() && (!data.exists() || newData.val() === data.val())"
+        },
+        "paymentStatus": {
+          ".validate": "newData.isString() && (!data.exists() || newData.val() === data.val()) && newData.val() === 'simulated_paid'"
+        },
+        "totalPrice": {
+          ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= 100000000 && (!data.exists() || newData.val() === data.val())"
+        },
+        "itemsJson": {
+          ".validate": "newData.isString() && newData.val().length > 2 && newData.val().length <= 20000 && (!data.exists() || newData.val() === data.val())"
+        }
+      }
+    }
+  }
+}

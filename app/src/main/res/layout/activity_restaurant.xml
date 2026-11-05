@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivCover"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cover_menu_1" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mediumSpace"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/mediumSpace"
+                android:text="7 Eleven"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/largeFontSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mediumSpace"
+                android:layout_marginRight="@dimen/mediumSpace"
+                android:text="82 Nguyễn Thị Minh Khai, P.6, Q.3"
+                android:textColor="@color/colorLightBlack"
+                android:textSize="@dimen/smallFontSize" />
+
+            <TextView
+                android:id="@+id/tvOpenHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mediumSpace"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="@dimen/mediumSpace"
+                android:text="Giờ mở cửa: 06:00 - 23:00"
+                android:textColor="@color/colorLightBlack"
+                android:textSize="@dimen/smallFontSize" />
+
+            <!-- Search Bar in Store -->
+            <EditText
+                android:id="@+id/etSearchFood"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginLeft="@dimen/mediumSpace"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/mediumSpace"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/bg_green_border_button"
+                android:hint="🔍 Tìm kiếm món ăn trong cửa hàng..."
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColor="#212121"
+                android:textColorHint="#9E9E9E"
+                android:textSize="14sp"
+                android:inputType="text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/mediumSpace"
+                android:background="@color/colorPrimary" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFoods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layoutViewBasket"
+        android:minHeight="60dp"
+        android:elevation="6dp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mediumSpace"
+        android:background="@drawable/bg_basket_action"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/mediumSpace">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giỏ hàng →"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/mediumFontSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalPrices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="0 VNĐ"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/mediumFontSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="0 món"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/mediumFontSize" />
+
+    </RelativeLayout>
+</FrameLayout>

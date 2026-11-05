@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvShipperOrderId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Đơn hàng #1001"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvShipperOrderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chờ nhận giao"
+                android:textColor="#E65100"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvShipperCustomer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Khách hàng: user@app.com"
+            android:textColor="#616161"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvShipperSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên món x1..."
+            android:textColor="#424242"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvShipperTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tổng tiền: 120,000 VNĐ (Phí ship: +15,000 VNĐ)"
+            android:textColor="#00B14F"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp" />
+
+        <!-- Simulation Progress Section -->
+        <LinearLayout
+            android:id="@+id/layoutSimulationSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:background="#F5F5F5"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvSimulateStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🚦 Tiến trình: Đã nhận đơn giao hàng"
+                android:textColor="#1565C0"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/pbDeliveryProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="6dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@android:drawable/progress_horizontal" />
+        </LinearLayout>
+
+        <!-- Shipper Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="12dp">
+
+            <Button
+                android:id="@+id/btnAcceptOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Nhận Giao Đơn Này"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:backgroundTint="#00B14F"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <Button
+                android:id="@+id/btnSimulateShip"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Chạy Mô Phỏng Ship 🚀"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:backgroundTint="#1565C0"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginEnd="6dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnCompleteDelivery"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Xác Nhận Đã Giao"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:backgroundTint="#2E7D32"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

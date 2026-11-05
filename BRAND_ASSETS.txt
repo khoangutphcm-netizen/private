@@ -1,0 +1,7 @@
+Logo KFC: https://kfcvietnam.com.vn/assets/images/kfc-logo.svg
+Logo Circle K: https://www.circlek.com.vn/wp-content/themes/circlek/images/img/logo-mb.svg
+Retrieved 2026-11-05. Original SVG geometry converted into Android VectorDrawable.
+Original sources: kfc-source.svg and circlek-source.svg.
+7-Eleven and Highlands Coffee retain the existing recognizable brand images.
+Logos belong to their respective brands. This app is a school demonstration.
+Demo menu names, prices, addresses and orders are illustrative, not official offers.

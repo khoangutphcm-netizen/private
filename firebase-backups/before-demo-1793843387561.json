@@ -1,0 +1,34 @@
+{
+  "users": {
+    "9kENxYFU3kONJlv1ce7NY0e9kPv2": {
+      "avatar": 0,
+      "email": "shipper@gmail.com",
+      "fullName": "Người Giao Hàng",
+      "role": "shipper"
+    },
+    "E8w4sZpBfUWl6KrgbeCJDsQxNkF2": {
+      "avatar": 0,
+      "email": "admin@gmail.com",
+      "fullName": "Quản Trị Viên",
+      "role": "admin"
+    },
+    "FKrtBFoIhIdXhhCeA2mes2knqoF3": {
+      "avatar": 0,
+      "email": "user@gmail.com",
+      "fullName": "Khách Hàng",
+      "role": "user"
+    }
+  },
+  "restaurants": {
+    "-P5b5h5wRk1Hcinl7vJ4": {
+      "address": "100 Le Loi, Q2",
+      "cover": "cover_menu_1",
+      "logo": "ic_seveneleven",
+      "name": "KFC",
+      "openHours": "8:00 - 20:00"
+    }
+  },
+  "foods": {},
+  "options": {},
+  "orders": {}
+}

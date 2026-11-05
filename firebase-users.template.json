@@ -1,0 +1,23 @@
+{
+  "REPLACE_WITH_ADMIN_UID": {
+    "email": "admin@gmail.com",
+    "fullName": "Quản trị viên",
+    "role": "admin",
+    "avatar": "ic_user",
+    "disabled": false
+  },
+  "REPLACE_WITH_USER_UID": {
+    "email": "user@gmail.com",
+    "fullName": "Khách hàng",
+    "role": "user",
+    "avatar": "ic_user",
+    "disabled": false
+  },
+  "REPLACE_WITH_SHIPPER_UID": {
+    "email": "shipper@gmail.com",
+    "fullName": "Shipper",
+    "role": "shipper",
+    "avatar": "ic_user",
+    "disabled": false
+  }
+}

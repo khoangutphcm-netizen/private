@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chỉnh Sửa Thông Tin Cá Nhân"
+        android:textColor="#212121"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ và tên mới:"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etEditFullName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Nhập họ và tên..."
+        android:inputType="textPersonName"
+        android:textColor="#212121"
+        android:textSize="15sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chọn ảnh đại diện (Avatar):"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@+id/ivAvatarOpt1"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_user"
+            android:padding="8dp"
+            android:background="@drawable/bg_green_border_button"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/ivAvatarOpt2"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_mascot"
+            android:padding="4dp"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/ivAvatarOpt3"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_driver"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/ivAvatarOpt4"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_food"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</LinearLayout>

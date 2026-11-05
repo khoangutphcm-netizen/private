@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Top Bun -->
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M15,42 C15,22 85,22 85,42 Z" />
+    <!-- Sesame seeds -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M35,30 A2,2 0 1,1 35,29.9 Z M50,26 A2,2 0 1,1 50,25.9 Z M65,30 A2,2 0 1,1 65,29.9 Z" />
+    <!-- Lettuce -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M12,42 C20,47 30,42 40,47 C50,42 60,47 70,42 C80,47 88,42 88,42 L88,48 L12,48 Z" />
+    <!-- Cheese -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M15,48 L85,48 L75,56 L55,52 L35,58 L15,48 Z" />
+    <!-- Meat Patty -->
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M15,55 C15,55 15,65 20,65 L80,65 C85,65 85,55 85,55 Z" />
+    <!-- Bottom Bun -->
+    <path
+        android:fillColor="#FFE0B2"
+        android:pathData="M18,67 L82,67 C82,78 18,78 18,67 Z" />
+</vector>

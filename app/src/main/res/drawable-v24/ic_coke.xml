@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Cup Body -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M25,25 L32,85 C33,89 67,89 68,85 L75,25 Z" />
+    <!-- Lid -->
+    <path
+        android:fillColor="#ECEFF1"
+        android:pathData="M20,20 L80,20 L80,25 L20,25 Z" />
+    <!-- Straw -->
+    <path
+        android:fillColor="#FFEB3B"
+        android:pathData="M55,10 L62,10 L52,30 L47,30 Z" />
+    <!-- White Wave Stripe on Cup -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M27,45 C35,55 45,35 55,45 C65,55 72,40 74,45 L73,53 C68,48 58,60 48,50 C38,40 30,52 28,50 Z" />
+</vector>

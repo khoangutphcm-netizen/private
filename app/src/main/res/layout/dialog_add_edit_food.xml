@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Food"
+        android:textColor="#1B5E20"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/etFoodName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Food Name (e.g. Uranium Pizza)"
+        android:inputType="textCapWords"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etFoodPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price in VND (e.g. 50000)"
+        android:inputType="number"
+        android:layout_marginTop="12dp"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restaurant ID (1 = 7 Eleven, 2 = KFC, 3 = Circle K, 4 = Highland)"
+        android:textColor="#757575"
+        android:textSize="12sp"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/etRestaurantId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Restaurant ID (Default: 1)"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+</LinearLayout>

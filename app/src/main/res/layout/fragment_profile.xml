@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:background="#F5F5F5">
+
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_user"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="User Avatar" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nguyễn Văn A"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user@app.com"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/tvUserRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vai trò: Khách hàng"
+        android:textColor="#388E3C"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="6dp" />
+
+    <Button
+        android:id="@+id/btnEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#00B14F"
+        android:text="CHỈNH SỬA THÔNG TIN"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnChangePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#1976D2"
+        android:text="ĐỔI MẬT KHẨU"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnOpenAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#1B5E20"
+        android:text="MỞ TRANG QUẢN TRỊ ADMIN"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#D32F2F"
+        android:text="ĐĂNG XUẤT"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

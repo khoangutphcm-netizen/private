@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tạo Tài Khoản Mới"
+        android:textColor="#00B14F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ và Tên:"
+        android:textColor="#212121"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etSignUpName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Họ và Tên"
+        android:textColor="#212121"
+        android:textColorHint="#9E9E9E"
+        android:textSize="15sp"
+        android:minHeight="48dp"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Đăng Nhập:"
+        android:textColor="#212121"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etSignUpEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nhapemail@domain.com"
+        android:textColor="#212121"
+        android:textColorHint="#9E9E9E"
+        android:textSize="15sp"
+        android:minHeight="48dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mật Khẩu:"
+        android:textColor="#212121"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etSignUpPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Mật Khẩu"
+        android:textColor="#212121"
+        android:textColorHint="#9E9E9E"
+        android:textSize="15sp"
+        android:minHeight="48dp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="16dp" />
+
+</LinearLayout>

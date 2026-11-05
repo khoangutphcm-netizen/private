@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5FAF6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="0dp"
+        android:gravity="center_horizontal">
+
+        <!-- Header Section with Mascot and Top Fruit Dish -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="20dp">
+
+            <!-- Top Right Fruit Dish (Completely inside screen, fitCenter) -->
+            <ImageView
+                android:id="@+id/ivDish1"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/dish"
+                android:contentDescription="Top Fruit Dish" />
+
+            <!-- Mascot and App Title -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/ivMascot"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_mascot"
+                    android:padding="4dp"
+                    android:contentDescription="App Mascot" />
+
+                <TextView
+                    android:id="@+id/tvAppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FoodNow"
+                    android:textColor="#00B14F"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/tvAppSlogan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Món ngon mỗi ngày, đặt ngay tại đây"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- White Card Input Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:background="@drawable/bg_signin_card"
+            android:layout_marginHorizontal="20dp"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/icon_email"
+                android:drawablePadding="12dp"
+                android:inputType="textEmailAddress"
+                android:hint="Địa chỉ email"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:textColor="#212121"
+                android:textColorHint="#9E9E9E"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/txtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/icon_lock"
+                android:drawablePadding="12dp"
+                android:hint="Mật khẩu"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:textColor="#212121"
+                android:textColorHint="#9E9E9E"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginTop="4dp" />
+
+            <!-- Forgot / Account Hint Text -->
+            <TextView
+                android:id="@+id/btnForgot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quên mật khẩu?"
+                android:textColor="#00B14F"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:minHeight="48dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="6dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Sign In / Sign Up Buttons -->
+            <LinearLayout
+                android:id="@+id/layoutButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btnSignIn"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#00B14F"
+                    android:text="Đăng nhập"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnSignUp"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#E8F5E9"
+                    android:text="Tạo tài khoản"
+                    android:textAllCaps="false"
+                    android:textColor="#00B14F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Social Login Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/btnSignInFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/icon_facebook"
+                android:drawablePadding="10dp"
+                android:padding="8dp"
+                android:text="Đăng nhập với Facebook"
+                android:textColor="#424242"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/btnSignInGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/icon_google"
+                android:drawablePadding="10dp"
+                android:padding="8dp"
+                android:text="Đăng nhập với Google"
+                android:textColor="#424242"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <Space android:layout_width="1dp" android:layout_height="0dp" android:layout_weight="1" />
+        <!-- Original asset has cropped left and bottom edges; align to screen edges. -->
+        <ImageView
+            android:id="@+id/ivDish2"
+            android:layout_width="144dp"
+            android:layout_height="124dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:src="@drawable/dish_2"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="0dp"
+            android:contentDescription="Bottom Salad Dish" />
+
+    </LinearLayout>
+
+</ScrollView>

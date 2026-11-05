@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Restaurant"
+        android:textColor="#1B5E20"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/etRestName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Restaurant Name (e.g. Burger King)"
+        android:inputType="textCapWords"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etRestAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address (e.g. 100 Le Lai, Q.1)"
+        android:inputType="textPostalAddress"
+        android:layout_marginTop="12dp"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etRestOpenHours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Open Hours (e.g. 8:00 - 22:00)"
+        android:inputType="text"
+        android:layout_marginTop="12dp"
+        android:minHeight="48dp" />
+
+</LinearLayout>

@@ -1,0 +1,209 @@
+{
+  "restaurants": {
+    "demo-r1": {
+      "name": "7 Eleven",
+      "logo": "ic_seveneleven",
+      "cover": "cover_menu_1",
+      "address": "82 Nguyễn Thị Minh Khai, P.6, Q.3",
+      "openHours": "06:00 - 23:00"
+    },
+    "demo-r2": {
+      "name": "KFC Chicken",
+      "logo": "logo_kfc",
+      "cover": "cover_menu_1",
+      "address": "123 Lê Lợi, P. Bến Thành, Q.1",
+      "openHours": "08:00 - 22:00"
+    },
+    "demo-r3": {
+      "name": "Circle K",
+      "logo": "logo_circlek",
+      "cover": "cover_menu_1",
+      "address": "45 Nguyễn Huệ, P. Bến Nghé, Q.1",
+      "openHours": "24/7 Mở cửa"
+    },
+    "demo-r4": {
+      "name": "Highlands Coffee",
+      "logo": "ic_highland",
+      "cover": "cover_menu_1",
+      "address": "200 Trần Hưng Đạo, Q.5",
+      "openHours": "07:00 - 23:00"
+    }
+  },
+  "foods": {
+    "demo-f1": {
+      "restaurantKey": "demo-r1",
+      "name": "Pizza phô mai (mẫu)",
+      "price": 120000,
+      "image": "ic_pizza",
+      "description": "Bánh Pizza phô mai xốt đặc biệt thơm ngon giòn rụm.",
+      "available": true
+    },
+    "demo-f2": {
+      "restaurantKey": "demo-r1",
+      "name": "Burger bò (mẫu)",
+      "price": 55000,
+      "image": "ic_burger",
+      "description": "Burger bò nướng đậm vị kết hợp phô mai xát lát hảo hạng.",
+      "available": true
+    },
+    "demo-f3": {
+      "restaurantKey": "demo-r1",
+      "name": "Nước ngọt có ga (mẫu)",
+      "price": 35000,
+      "image": "ic_coke",
+      "description": "Nước ngọt có ga mát lạnh sảng khoái đập tan cơn khát.",
+      "available": true
+    },
+    "demo-f4": {
+      "restaurantKey": "demo-r1",
+      "name": "Mì xào hải sản (mẫu)",
+      "price": 65000,
+      "image": "ic_noodle",
+      "description": "Mì xào hải sản cay nồng đậm đà chuẩn vị Á Đông.",
+      "available": true
+    },
+    "demo-f5": {
+      "restaurantKey": "demo-r1",
+      "name": "Bánh Mì Trứng",
+      "price": 25000,
+      "image": "ic_banh_mi",
+      "description": "Bánh mì giòn kẹp trứng ốp la nóng hổi kèm dưa leo rau thơm.",
+      "available": true
+    },
+    "demo-f6": {
+      "restaurantKey": "demo-r1",
+      "name": "Trà Sữa Thái",
+      "price": 30000,
+      "image": "ic_milk_tea",
+      "description": "Trà sữa Thái xanh đậm vị thơm béo kèm trân châu giòn.",
+      "available": true
+    },
+    "demo-f7": {
+      "restaurantKey": "demo-r2",
+      "name": "Fried Chicken Combo",
+      "price": 89000,
+      "image": "dish",
+      "description": "Combo 2 miếng gà rán giòn rụm + 1 khoai tây chiên + 1 nước ngọt.",
+      "available": true
+    },
+    "demo-f8": {
+      "restaurantKey": "demo-r2",
+      "name": "Zinger Burger",
+      "price": 59000,
+      "image": "dish_2",
+      "description": "Burger gà giòn cay đặc trưng xốt mayonnaise đậm vị.",
+      "available": true
+    },
+    "demo-f9": {
+      "restaurantKey": "demo-r2",
+      "name": "French Fries Large",
+      "price": 39000,
+      "image": "dish",
+      "description": "Khoai tây chiên giòn tan cỡ lớn châm xốt cà chua.",
+      "available": true
+    },
+    "demo-f10": {
+      "restaurantKey": "demo-r2",
+      "name": "Pepsi Can",
+      "price": 20000,
+      "image": "ic_coke",
+      "description": "Lon Pepsi mát lạnh sảng khoái.",
+      "available": true
+    },
+    "demo-f11": {
+      "restaurantKey": "demo-r3",
+      "name": "Hot Dog Supreme",
+      "price": 29000,
+      "image": "ic_banh_mi",
+      "description": "Bánh hot dog kẹp xúc xích Đức nướng xốt mù tạt.",
+      "available": true
+    },
+    "demo-f12": {
+      "restaurantKey": "demo-r3",
+      "name": "Milk Tea Boba",
+      "price": 32000,
+      "image": "ic_milk_tea",
+      "description": "Trà sữa truyền thống ngọt thanh trân châu đen dai dẻo.",
+      "available": true
+    },
+    "demo-f13": {
+      "restaurantKey": "demo-r3",
+      "name": "Instant Ramen Egg",
+      "price": 22000,
+      "image": "ic_noodle",
+      "description": "Mì ly nóng hổi chèn trứng lòng đào thơm ngon.",
+      "available": false
+    },
+    "demo-f14": {
+      "restaurantKey": "demo-r4",
+      "name": "Phin Sữa Đá",
+      "price": 39000,
+      "image": "ic_black_coffee",
+      "description": "Cà phê phin truyền thống đậm đà hòa quyện sữa đặc ngọt ngào.",
+      "available": true
+    },
+    "demo-f15": {
+      "restaurantKey": "demo-r4",
+      "name": "Trà Sen Vàng",
+      "price": 49000,
+      "image": "ic_milk_tea",
+      "description": "Trà oolong thanh mát kết hợp hạt sen thơm bùi và củ năng.",
+      "available": true
+    },
+    "demo-f16": {
+      "restaurantKey": "demo-r4",
+      "name": "Freeze Trà Xanh",
+      "price": 55000,
+      "image": "ic_milk_tea",
+      "description": "Trà xanh đá xay mát lạnh phủ kem tươi ngọt béo.",
+      "available": true
+    }
+  },
+  "options": {
+    "demo-o1": {
+      "foodKey": "demo-f7",
+      "optionName": "Sốt Mayo",
+      "extraPrice": 5000
+    },
+    "demo-o2": {
+      "foodKey": "demo-f7",
+      "optionName": "Sốt Cay Extra",
+      "extraPrice": 5000
+    },
+    "demo-o3": {
+      "foodKey": "demo-f7",
+      "optionName": "Thêm Phô Mai",
+      "extraPrice": 10000
+    },
+    "demo-o4": {
+      "foodKey": "demo-f8",
+      "optionName": "Bò Miếng Extra",
+      "extraPrice": 15000
+    },
+    "demo-o5": {
+      "foodKey": "demo-f8",
+      "optionName": "Sốt Mayo",
+      "extraPrice": 5000
+    },
+    "demo-o6": {
+      "foodKey": "demo-f1",
+      "optionName": "Thêm Phô Mai Mozzarella",
+      "extraPrice": 15000
+    },
+    "demo-o7": {
+      "foodKey": "demo-f1",
+      "optionName": "Thêm Xúc Xích",
+      "extraPrice": 10000
+    },
+    "demo-o8": {
+      "foodKey": "demo-f6",
+      "optionName": "Trân Châu Đen",
+      "extraPrice": 8000
+    },
+    "demo-o9": {
+      "foodKey": "demo-f6",
+      "optionName": "Thạch trái cây",
+      "extraPrice": 8000
+    }
+  }
+}

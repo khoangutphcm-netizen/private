@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Bowl -->
+    <path
+        android:fillColor="#1E88E5"
+        android:pathData="M15,45 C15,80 85,80 85,45 Z" />
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M35,76 L65,76 L60,82 L40,82 Z" />
+    <!-- Noodles -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M18,45 C25,35 35,48 45,35 C55,48 65,35 75,45 C82,45 85,42 82,40 C72,30 62,40 52,28 C42,40 32,30 20,40 Z" />
+    <!-- Chopsticks -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M25,12 L85,40 L82,43 L22,15 Z" />
+    <path
+        android:fillColor="#A1887F"
+        android:pathData="M30,8 L90,36 L87,39 L27,11 Z" />
+</vector>
